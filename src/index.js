@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './store';
+import "./api/mock"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // StrictMode严格模式，两次渲染
   <React.StrictMode>
-    <App />
+    <Provider store={store} theme={{
+      components: {
+        Layout: {
+          colorBgContainer: "transparent"
+        },
+      }
+    }}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

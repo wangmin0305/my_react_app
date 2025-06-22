@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  height: 100%;
 }
 
 .App-logo {
@@ -36,3 +37,14 @@
     transform: rotate(360deg);
   }
 }
+
+html,body,#root {
+  height: 100%;
+}
+
+.common-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
