@@ -22,3 +22,27 @@ export const deleteUser = (params) => {
         data: params
     })
 }
+
+export const createUser = (params) => {
+    return http.request({
+        url: "/user/createUser",
+        method: "post",
+        data: params
+    })
+}
+
+export const updateUser = (params) => {
+    return http.request({
+        url: "/user/updateUser",
+        method: "post",
+        data: params
+    })
+}
+
+export const getMenu = (params) => {
+    return http.request({
+        url: "/permission/getMenu",
+        method: "post",
+        data: params
+    })
+}

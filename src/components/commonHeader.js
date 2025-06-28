@@ -5,14 +5,19 @@ import '../App.css'
 import { useDispatch } from "react-redux"
 // 拿到暴露出来的修改展开方法collapseMenu
 import { collapseMenu } from "../store/reducers/tab"
+import { useNavigate } from "react-router-dom";
 
 const { Header } = Layout;
 
 const CommonHeader = ({ collapsed }) => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     // 退出事件
-    const logout = () => { }
-    
+    const logout = () => {
+        localStorage.setItem("token", "")
+        navigate("/login")
+    }
+
     const items = [
         {
             key: '1',
@@ -25,7 +30,7 @@ const CommonHeader = ({ collapsed }) => {
         {
             key: '2',
             label: (
-                <a onClick={() => logout} target="_blank" rel="noopener noreferrer">
+                <a onClick={() => logout()} target="_blank" rel="noopener noreferrer">
                     退出
                 </a>
             )
