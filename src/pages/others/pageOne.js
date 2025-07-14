@@ -38,7 +38,13 @@ class pageOne extends React.Component {
     }
     
     componentDidMount() {
-        
+        for(var i=0; i < 5; i++) {
+            (function(hhh){
+                setTimeout(function(){
+                    console.log(hhh)
+                },100)
+            })(i);
+        }
     }
 
     render() {
